@@ -16,6 +16,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         double valorSalarioBruto = scanner.nextDouble();
         double adicionalDosBeneficios = scanner.nextDouble();
+        double percentualImposto;
+
+        if (valorSalarioBruto <= 1400.00) {
+            percentualImposto = 0.05;
+        } else if (valorSalarioBruto <= 2800.00) {
+            percentualImposto = 0.10;
+        } else {
+            percentualImposto = 0.15;
+        }
+
+        double salarioLiquido = valorSalarioBruto - (valorSalarioBruto * percentualImposto) + adicionalDosBeneficios;
+
+        System.out.println("Salário a ser transferido: " + salarioLiquido);
 
     }
 }
